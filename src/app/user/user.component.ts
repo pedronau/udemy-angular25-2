@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +12,8 @@ export class UserComponent {
   @Input ({required: true}) id!: string;
   @Input({required: true}) avatar!: string;
   @Input({required: true}) name!: string;
-  @Output() select = new EventEmitter();
+  // @Output() select = new EventEmitter(); vamos a hacer lo mismo de antes y aprender como se hace esto con señales en vez de con decoradores
+  select = output<string>();
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
