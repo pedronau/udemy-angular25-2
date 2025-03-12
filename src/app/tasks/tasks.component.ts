@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
+import { AddComponent } from '../add/add.component';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskComponent],
+  imports: [TaskComponent, AddComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
@@ -47,4 +48,9 @@ export class TasksComponent {
     this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 
+  isTrue: boolean = false; 
+
+  toggleState() {
+    this.isTrue = !this.isTrue; 
+  }
 }
