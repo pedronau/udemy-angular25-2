@@ -3,6 +3,7 @@ import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { type addedTask } from './new-task/new-task.model';
 import { TasksService } from './task.service';
+import { Task } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -31,9 +32,5 @@ export class TasksComponent {
 
   onStartAddTask() {
     this.isAddingTask = !this.isAddingTask;
-  }
-
-  onAddTask(taskData: addedTask) {
-    
   }
 }
